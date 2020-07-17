@@ -15,6 +15,6 @@ public interface AccountRepository {
 	
 	public List<Account> findAll();
 	
-	public Account findByAccountNumber(String accountNuber);
+	public Account findByAccountNumber(String accountNumber);
 	
 }

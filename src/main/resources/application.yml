@@ -3,7 +3,7 @@ server:
   servlet:
     context-path: /blog
 
-spring:  
+spring:
   mvc:
     view:
       prefix: /WEB-INF/views/
