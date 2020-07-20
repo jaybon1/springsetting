@@ -70,6 +70,13 @@
 		    <artifactId>jstl</artifactId>
 		</dependency>
 		
+		
+		<!-- 스프링부트 스타터 액츄에이터 오류 때문에 삽입 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		
 	</dependencies>
 
 	<build>

@@ -11,12 +11,12 @@ public class IndexController {
 		return "index";
 	}
 	
-	@GetMapping
+	@GetMapping("auth/joinForm")
 	public String joinForm() {
 		return "user/joinForm";
 	}
 	
-	@GetMapping
+	@GetMapping("auth/loginForm")
 	public String loginForm() {
 		return "user/loginForm";
 	}
