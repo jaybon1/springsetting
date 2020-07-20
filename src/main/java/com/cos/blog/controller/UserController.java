@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -43,7 +44,9 @@ public class UserController {
 		
 		// 퍼시스턴스란 rs를 자바 객체에 넣어 주는 것
 		
-		if(persistUser.getId() != 0) {
+		if(ObjectUtils.isEmpty(persistUser)) { // ObjectUtils.isEmpty 빈객체를 리턴받았을 경우 트루
+			return new CommonRespDto<String>(-1, "로그인 결과 실패");
+		} else {
 			// 세션등록 해야함
 			// 톰캣은 리퀘스트 리스폰스만 만들어준다
 			// 리퀘스트 안에 세션이 있는 것은 아니고 메모리 접근 주소를 가지고 있다
@@ -51,8 +54,6 @@ public class UserController {
 			session.setAttribute("principal", persistUser);
 			
 			return new CommonRespDto<String>(1, "로그인 결과 성공");
-		} else {
-			return new CommonRespDto<String>(-1, "로그인 결과 실패");			
 		}
 		
 	}
