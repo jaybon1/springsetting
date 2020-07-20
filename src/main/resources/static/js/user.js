@@ -32,8 +32,12 @@ let index = { // 여기서는 이벤트 리스너를 바인딩만 하고
 			
 		}).done((resp)=>{
 			
-			alert("회원가입 성공");
-			location.href="/";
+			if(resp.statusCode == 1){
+				alert("회원가입 성공");
+				location.href="/";
+			} else {
+				alert("회원가입 실패");
+			}
 			
 		}).fail((error)=>{
 			
@@ -63,8 +67,13 @@ let index = { // 여기서는 이벤트 리스너를 바인딩만 하고
 			
 		}).done((resp)=>{
 			
-			alert("로그인 성공");
-			location.href="/";
+			if(resp.statusCode == 1){
+				alert("로그인 성공");
+				location.href="/";
+			} else {
+				alert("아이디와 패스워드를 다시 입력하세요");
+			}
+			
 			
 		}).fail((error)=>{
 			
