@@ -21,6 +21,7 @@ public class UserService {
 	// 커밋이 필요한 기능(select가 아닌 것)은 @Transactional 붙여주자
 	@Transactional
 	public void 회원가입(User user) {
+		user.setRole("ROLE_USER");
 		userRepository.save(user);
 	}
 	
