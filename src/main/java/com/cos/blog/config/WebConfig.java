@@ -15,7 +15,9 @@ public class WebConfig implements WebMvcConfigurer { // web.xml 처럼작동한�
 	public void addInterceptors(InterceptorRegistry registry) {
 		
 		registry.addInterceptor(new SessionIntercepter())
-			.addPathPatterns("/user/**");
+			.addPathPatterns("/user/**")
+			.addPathPatterns("/post/**")
+			.addPathPatterns("/post**");
 		
 		registry.addInterceptor(new RoleIntercepter())
 			.addPathPatterns("/admin/**");
