@@ -26,7 +26,7 @@ public class SessionIntercepter extends HandlerInterceptorAdapter {
 			PrintWriter out = response.getWriter();
 			out.print("<script>");
 			out.print("alert('로그인이 필요합니다.');");
-			out.print("location.href='/auto/loginForm'");
+			out.print("location.href='/auth/loginForm'");
 			out.print("</script>");
 			return false; // 함수로 진입하지 않고 종료
 		}
