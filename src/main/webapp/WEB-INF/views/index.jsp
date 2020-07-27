@@ -18,7 +18,7 @@
     	<c:forEach var="post" items="${requestScope.posts}">
 	      <tr>
 	        <td>${post.id}</td>
-	        <td>${post.title}</td>
+	        <td><a href="/post/${post.id}">${post.title}</a></td>
 	        <td><fmt:formatDate value="${post.createDate}" pattern="yyyy-MM-dd"/></td>
 	      </tr>
     	</c:forEach>
